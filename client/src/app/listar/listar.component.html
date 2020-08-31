@@ -1,0 +1,57 @@
+<div *ngIf="error" class="alert alert-danger">
+  <strong>Erro:</strong>
+  {{errorMsg}}
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-auto">
+  <table class="table table-striped table-hover table-responsive">
+    <thead class="thead-dark text-center">
+      <tr>
+        <th scope="col" class="text-right">#</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Ano Modelo</th>
+        <th scope="col">Ano Fabricação</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Fipe</th>
+        <th scope="col">Placa</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehicle of vehicles">
+        <th scope="row" class="text-right">{{vehicle.id}}</th>
+        <td>{{vehicle.modelo}}</td>
+        <td>{{vehicle.anoModelo}}</td>
+        <td>{{vehicle.anoFabricacao}}</td>
+        <td>{{vehicle.marca}}</td>
+        <td>{{vehicle.fipe}}</td>
+        <td>{{vehicle.placa}}</td>
+        <td>
+          <button type="button" data-toggle="modal" data-target="#detalhes" (click)="view(vehicle.id)" class="btn btn-primary btn-sm" ><fa-icon [fixedWidth]="true" [icon]="viewIcon"></fa-icon></button>
+          <button type="button" data-toggle="modal" data-target="#editar" (click)="select(vehicle)" class="btn btn-primary btn-sm ml-1" ><fa-icon [fixedWidth]="true" [icon]="editIcon"></fa-icon></button>
+          <button type="button" data-toggle="modal" data-target="#excluir" (click)="select(vehicle)" class="btn btn-danger btn-sm ml-1" ><fa-icon [fixedWidth]="true" [icon]="deleteIcon"></fa-icon></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<app-modal [name]="'detalhes'">
+  <span title>Detalhes</span>
+  <app-vehicle [vehicle]="selected" body></app-vehicle>
+  <!-- <button type="button" data-dismiss="modal" class="btn btn-primary" (click)="edit(selected)" confirm-button>Editar</button> -->
+</app-modal>
+
+<app-modal [name]="'editar'">
+  <span title>Editar</span>
+  <app-editar [vehicle]="selected" body></app-editar>
+  <button type="button" data-dismiss="modal" class="btn btn-primary" (click)="edit(selected)" confirm-button>Editar</button>
+</app-modal>
+
+<app-modal [name]="'excluir'">
+  <span title>Excluir</span>
+  <app-vehicle [vehicle]="selected" body></app-vehicle>
+  <button type="button" data-dismiss="modal" class="btn btn-danger" (click)="delete(selected)" confirm-button>Excluir</button>
+</app-modal>

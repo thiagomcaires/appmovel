@@ -1,0 +1,17 @@
+<form #form="ngForm" class="form-inline mb-3" (ngSubmit)="get(form)" novalidate>
+  <div class="form-group">
+    <label for="info">Código FIPE ou placa:</label>
+    <input name="info" required ngModel type="text" id="info" class="form-control mx-sm-3" aria-describedby="info">
+    <button type="submit" class="m-3 btn btn-primary">Consultar</button>
+  </div>
+</form>
+
+
+<div *ngIf="!error">
+  <app-vehicle [vehicle]="vehicle"></app-vehicle> 
+</div>
+
+<div *ngIf="error" class="alert alert-danger">
+  <strong>Erro:</strong>
+  {{errorMsg}}
+</div>

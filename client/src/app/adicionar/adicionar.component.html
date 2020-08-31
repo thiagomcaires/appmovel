@@ -1,0 +1,53 @@
+<form #form="ngForm" class="mb-3" (ngSubmit)="save(form)" novalidate>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="modelo">Modelo:</label>
+        <input name="modelo" ngModel type="text" id="modelo" class="form-control mx-sm-3" aria-describedby="modelo">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="anoModelo">Ano Modelo:</label>
+        <input name="anoModelo" ngModel type="text" id="anoModelo" class="form-control mx-sm-3" aria-describedby="anoModelo">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="anoFabricacao">Ano Fabricação:</label>
+        <input name="anoFabricacao" ngModel type="text" id="anoFabricacao" class="form-control mx-sm-3" aria-describedby="anoFabricacao">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="marca">Marca:</label>
+        <input name="marca" ngModel type="text" id="marca" class="form-control mx-sm-3" aria-describedby="marca">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="fipe">FIPE:</label>
+        <input name="fipe" ngModel type="text" id="fipe" class="form-control mx-sm-3" aria-describedby="fipe">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="placa">Placa:</label>
+        <input name="placa" ngModel type="text" id="placa" class="form-control mx-sm-3" aria-describedby="placa">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 text-center">
+      <button type="submit" class="btn btn-primary">Adicionar</button>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</form>
+<div *ngIf="error" class="alert alert-danger">
+  <strong>Erro:</strong>
+  {{errorMsg}}
+</div>

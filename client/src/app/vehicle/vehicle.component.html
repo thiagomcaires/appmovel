@@ -1,0 +1,27 @@
+<div class="container" *ngIf="vehicle">
+  <div class="row">
+    <h3>Veículo {{vehicle.id}}</h3>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      Modelo: {{vehicle.modelo}}
+    </div>
+    <div class="col-md-4">
+      Ano Modelo: {{vehicle.anoModelo}}
+    </div>
+    <div class="col-md-4">
+      Ano Fabricação: {{vehicle.anoFabricacao}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      Marca: {{vehicle.marca}}
+    </div>
+    <div class="col-md-4">
+      FIPE: {{vehicle.fipe}}
+    </div>
+    <div class="col-md-4">
+      Placa: {{vehicle.placa}}
+    </div>
+  </div>
+</div>

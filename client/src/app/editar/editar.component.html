@@ -1,0 +1,45 @@
+<div class="container" *ngIf="vehicle">
+  <div class="row">
+    <h3>Veículo {{vehicle.id}}</h3>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="modelo">Modelo:</label>
+        <input name="modelo" [(ngModel)]="vehicle.modelo" type="text" id="modelo" class="form-control mx-sm-3" aria-describedby="modelo">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="anoModelo">Ano Modelo:</label>
+        <input name="anoModelo" [(ngModel)]="vehicle.anoModelo" type="text" id="anoModelo" class="form-control mx-sm-3" aria-describedby="anoModelo">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="anoFabricacao">Ano Fabricação:</label>
+        <input name="anoFabricacao" [(ngModel)]="vehicle.anoFabricacao" type="text" id="anoFabricacao" class="form-control mx-sm-3" aria-describedby="anoFabricacao">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="marca">Marca:</label>
+        <input name="marca" [(ngModel)]="vehicle.marca" type="text" id="marca" class="form-control mx-sm-3" aria-describedby="marca">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="fipe">FIPE:</label>
+        <input name="fipe" [(ngModel)]="vehicle.fipe" type="text" id="fipe" class="form-control mx-sm-3" aria-describedby="fipe">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="placa">Placa:</label>
+        <input name="placa" [(ngModel)]="vehicle.placa" type="text" id="placa" class="form-control mx-sm-3" aria-describedby="placa">
+      </div>
+    </div>
+  </div>
+</div>
